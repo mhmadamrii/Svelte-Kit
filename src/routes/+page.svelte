@@ -2,6 +2,7 @@
   let sayHello = "Hello world";
   let isAlert = false;
   let inputValue = "";
+  let urlAudio = 'https://sveltejs.github.io/assets/music/strauss.mp3'
 
   function handleChange(event) {
     inputValue = event.target.value;
@@ -18,6 +19,7 @@
     <h1>{sayHello}</h1>
     <button class="btn" on:click={showAlert} on:input={handleChange}>Submit</button>
     <input type="text" placeholder="Type here" class="input input-bordered input-success w-full max-w-xs" bind:value={inputValue} />
+    <audio src={urlAudio}><track kind="captions" /></audio>
 
     {#if isAlert}
       <div class="alert alert-success">
